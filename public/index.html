@@ -24,10 +24,54 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>Monaco</title>
+    <!--github token
+    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
+    -->
+    <title>Monaco sistemas</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+      <a class="navbar-brand" href="#">Monaco</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" aria-current="page" href="#">
+            Almacen
+          </a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">User</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Diario
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Incidencias</a></li>
+              <li><a class="dropdown-item" href="#">Reportes</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Folios</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#">Cotizaciones</a></li>
+          <!--<li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li>-->
+        </ul>
+    
+      </div>
+
+      </div>
+      </nav>
+    <!--Navbar-->
+    <!--<noscript>You need to enable JavaScript to run this app.</noscript>-->
     <div id="root"></div>
     <!--
       This HTML file is a template.
