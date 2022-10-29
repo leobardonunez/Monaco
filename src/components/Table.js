@@ -12,7 +12,8 @@ class Table extends React.Component {
     }
     state = {  }
     render() { 
-        return (  <table class="table table-dark table-striped table-hover">
+        return (  
+        <table class="table table-dark table-striped table-hover">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -40,7 +41,8 @@ class Table extends React.Component {
             <td>@twitter</td>
           </tr>
         </tbody>
-      </table> );
+      </table> 
+      );
     }
 }
  
