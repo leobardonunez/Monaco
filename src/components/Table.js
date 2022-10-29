@@ -16,10 +16,10 @@ class Table extends React.Component {
         <table class="table table-dark table-striped table-hover">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Id</th>
+            <th scope="col">Serie</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Marca</th>
           </tr>
         </thead>
         <tbody>
