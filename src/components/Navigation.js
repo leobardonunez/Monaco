@@ -1,7 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
-
+import { BrowserRouter, Link, Switch } from "react-router-dom";
 
 
 class Navigation extends React.Component {
@@ -14,7 +12,7 @@ class Navigation extends React.Component {
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
           <a
-            className="navbar-brand"            
+            className="navbar-brand"
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasWithBothOptions"
             aria-controls="offcanvasWithBothOptions"
@@ -36,24 +34,17 @@ class Navigation extends React.Component {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" >
-                  Dashboard
-                </a>               
+                <Link to="/" className="nav-link active" aria-current="page">Dashboard</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" aria-current="page" >
-                  Almacen
-                </a>
+                <Link to="/almacen" className="nav-link" aria-current="page">Almacen</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" >
-                  User
-                </a>
+                <Link to="/user" className="nav-link" aria-current="page">User</Link>
               </li>
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
-                  
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
@@ -62,26 +53,18 @@ class Navigation extends React.Component {
                 </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <a className="dropdown-item" >
-                      Terminales activas
-                    </a>
+                    <Link to="/terminales" className="dropdown-item">Terminales activas</Link>
                   </li>
                   <li>
-                    <a className="dropdown-item" >
-                      Incidencias
-                    </a>
+                    <Link to="/incidencias" className="dropdown-item">Incidencias</Link>
                   </li>
                   <li>
-                    <a className="dropdown-item" >
-                      Reportes
-                    </a>
+                    <Link to="/reportes" className="dropdown-item">Reportes</Link>
                   </li>
                   <li></li>
                   <li>
-                    <hr/>
-                    <a className="dropdown-item" >
-                      Folios
-                    </a>
+                    <hr />
+                    <Link to="/folios" className="dropdown-item">Folios</Link>
                   </li>
                 </ul>
               </li>
