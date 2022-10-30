@@ -1,6 +1,5 @@
 import React from "react";
-import { BrowserRouter, Link, Switch } from "react-router-dom";
-
+import {Link } from "react-router-dom";
 
 class Navigation extends React.Component {
   constructor(props) {
@@ -34,13 +33,13 @@ class Navigation extends React.Component {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link to="/" className="nav-link active" aria-current="page">Dashboard</Link>
+                <Link to="/" className="nav-link active" >Dashboard</Link>
               </li>
               <li className="nav-item">
-                <Link to="/almacen" className="nav-link" aria-current="page">Almacen</Link>
+                <Link to="/almacen" className="nav-link">Almacen</Link>
               </li>
               <li className="nav-item">
-                <Link to="/user" className="nav-link" aria-current="page">User</Link>
+                <Link to="user" className="nav-link" aria-current="page">User</Link>
               </li>
               <li className="nav-item dropdown">
                 <a

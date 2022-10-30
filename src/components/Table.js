@@ -13,7 +13,7 @@ class Table extends React.Component {
     state = {  }
     render() { 
         return (  
-        <table class="table table-dark table-striped table-hover">
+        <table className="table table-dark table-striped table-hover">
         <thead>
           <tr>
             <th scope="col">Id</th>
@@ -37,7 +37,7 @@ class Table extends React.Component {
           </tr>
           <tr>
             <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
+            <td colSpan="2">Larry the Bird</td>
             <td>@twitter</td>
           </tr>
         </tbody>
