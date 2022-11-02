@@ -2,7 +2,7 @@ import React from 'react';
 
 import Table from '../components/Table';
 import CardDashboard from '../components/CardDashboard';
-
+import '../styles/card-dashboard.css';
 
 class Dashboard extends React.Component {
     constructor(props) {
@@ -15,7 +15,7 @@ class Dashboard extends React.Component {
                 <div className="container text-center" id="card">
                     <div className="row">
                         <div className="col">
-                            <CardDashboard />
+                            <CardDashboard/> 
                         </div>
                         <div className="col">
                             <CardDashboard />
