@@ -15,10 +15,14 @@ code {
     monospace;
 }
 .navbar{
-  background-color: rgb(235, 228, 201);
+  background-color: rgb(81, 128, 102);  
 }
-
-
+.navbar-brand{
+  color: white;
+}
+.nav-link{
+  color: white;
+}
 
 
 
