@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 class Navigation extends React.Component {
   constructor(props) {
@@ -8,7 +8,7 @@ class Navigation extends React.Component {
   state = {};
   render() {
     return (
-      <nav className="navbar navbar-expand-lg">
+      <nav className="navbar navbar-expand-lg bg-dark">
         <div className="container-fluid">
           <a
             className="navbar-brand"
@@ -33,13 +33,13 @@ class Navigation extends React.Component {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link to="/" className="nav-link" >Dashboard</Link>
+                <NavLink exact to="/" className="nav-link" activeClassName="active">Dashboard</NavLink>
               </li>
               <li className="nav-item">
-                <Link to="/almacen" className="nav-link">Almacen</Link>
+                <NavLink exact to="/almacen" className="nav-link">Almacen</NavLink>
               </li>
               <li className="nav-item">
-                <Link to="user" className="nav-link" aria-current="page">User</Link>
+                <NavLink exact to="user" className="nav-link" aria-current="page">User</NavLink>
               </li>
               <li className="nav-item dropdown">
                 <a
@@ -49,10 +49,10 @@ class Navigation extends React.Component {
                   aria-expanded="false"
                 >
                   Diario
-                </a>
+                </a>                
                 <ul className="dropdown-menu">
                   <li>
-                    <Link to="/terminales" className="dropdown-item">Terminales activas</Link>
+                    <Link to="/terminales" className="dropdown-item">Terminales</Link>
                   </li>
                   <li>
                     <Link to="/incidencias" className="dropdown-item">Incidencias</Link>
@@ -60,7 +60,9 @@ class Navigation extends React.Component {
                   <li>
                     <Link to="/reportes" className="dropdown-item">Reportes</Link>
                   </li>
-                  <li></li>
+                  <li>
+                    <Link to="/info" className="dropdown-item">Info</Link>
+                  </li>
                   <li>
                     <hr />
                     <Link to="/folios" className="dropdown-item">Folios</Link>
