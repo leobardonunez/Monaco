@@ -1,0 +1,14 @@
+
+.numero{
+    background-color: green;
+    margin: 1px;
+    color: white;        
+}
+.espaciado{
+    background-color: aqua;
+    margin: 1px;
+    color: aqua;
+}
+.espaciado-row{
+    margin-top: 20px;
+}
