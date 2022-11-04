@@ -10,7 +10,12 @@ class CardDashboard extends React.Component {
     state = {}
     render(props) {
         return (
-           console.log(props)           
+            <div className="card text-center shadow-lg" >
+                <div className="card-body">
+                    <h5 className="card-title">{this.props.title}</h5>
+                    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+            </div>
         );
     }
 }
@@ -23,4 +28,6 @@ export default CardDashboard;
     <h5 className="card-title">{props.title}</h5>
     <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>                    
 </div>
-</div> */}
+</div> 
+console.log(props)
+*/}

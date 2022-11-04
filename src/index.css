@@ -24,5 +24,8 @@ code {
   color: white;
 }
 
+.nav-link:active{
+  color: rgb(99, 223, 240);
+}
 
 

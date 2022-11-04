@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 
 class Sidebar extends React.Component {
   constructor(props) {
@@ -46,15 +47,15 @@ class Sidebar extends React.Component {
               </div>
               <p className="mb-1">Some placeholder content in a paragraph.</p>
               <small className="text-muted">And some muted small print.</small>
-            </a>
-            <a  className="list-group-item list-group-item-action">
+            </a>            
+            <Link to="/layout" className="list-group-item list-group-item-action">
               <div className="d-flex w-100 justify-content-between">
-                <h5 className="mb-1">Layout</h5>
+                <h5>Layout</h5>
                 <small className="text-muted">3 days ago</small>
               </div>
               <p className="mb-1">Some placeholder content in a paragraph.</p>
               <small className="text-muted">And some muted small print.</small>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

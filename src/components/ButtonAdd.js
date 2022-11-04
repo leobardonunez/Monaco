@@ -8,7 +8,7 @@ class ButtonAdd extends React.Component {
     state = {  }
     render() { 
         return ( 
-            <button type='button' className='btn btn-success shadow-lg'>Añadir +</button>
+            <button type='button' className='btn btn-success shadow-lg'>Añadir</button>
          );
     }
 }
