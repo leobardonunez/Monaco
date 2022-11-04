@@ -4,6 +4,7 @@ import Table from '../components/Table';
 import CardDashboard from '../components/CardDashboard';
 import '../styles/card-dashboard.css';
 
+
 class Dashboard extends React.Component {
     constructor(props) {
         super(props);
@@ -15,13 +16,16 @@ class Dashboard extends React.Component {
                 <div className="container text-center" id="card">
                     <div className="row">
                         <div className="col">
-                            <CardDashboard/> 
-                        </div>
-                        <div className="col">
                             <CardDashboard />
                         </div>
                         <div className="col">
-                            <CardDashboard />
+                            <CardDashboard title="como estas?"/>
+                        </div>
+                        <div className="col">
+                            <CardDashboard title="que bueno que estes bien"/>
+                        </div>
+                        <div className="col">
+                            <CardDashboard title="que bueno que estes bien"/>
                         </div>
                     </div>
                 </div>
