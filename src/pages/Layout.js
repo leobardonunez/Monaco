@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/layout.css";
+import LayoutAtrasBarras from "./LayoutAtrasBarra";
 import LayoutBaños from "./LayoutBaños";
 import LayoutEntradaPersonal from "./LayoutEntradaPersonal";
 
@@ -19,6 +20,7 @@ class Layout extends React.Component {
           </button>
           <LayoutBaños />
           <LayoutEntradaPersonal/>
+          <LayoutAtrasBarras/>
         </div>
       </>
     );
