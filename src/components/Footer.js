@@ -9,7 +9,8 @@ class Footer extends React.Component {
   render() {
     return (
       <>
-          <footer style={styles.footer} className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+          <footer className={styles.footer}>
+          {/* <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"> */}
             <div className="col-md-4 d-flex align-items-center">
               <a
                 href="/"
