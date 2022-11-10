@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/layout.css";
 import LayoutAtrasBarras from "./LayoutAtrasBarra";
 import LayoutBaños from "./LayoutBaños";
+import LayoutEntradaCentro from "./LayoutEntradaCentro";
 import LayoutEntradaPersonal from "./LayoutEntradaPersonal";
 
 class Layout extends React.Component {
@@ -21,6 +22,7 @@ class Layout extends React.Component {
           <LayoutBaños />
           <LayoutEntradaPersonal/>
           <LayoutAtrasBarras/>
+          <LayoutEntradaCentro/>
         </div>
       </>
     );

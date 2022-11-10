@@ -8,7 +8,7 @@ class Navigation extends React.Component {
   state = {};
   render() {
     return (
-      <nav className="navbar navbar-expand-lg bg-dark">
+      <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
           <a
             className="navbar-brand"
