@@ -8,7 +8,7 @@ class Navigation extends React.Component {
   state = {};
   render() {
     return (
-      <nav className="navbar navbar-expand-lg">
+      <nav className="navbar navbar-expand-lg sticky-top">
         <div className="container-fluid">
 {/*           <a
             className="navbar-brand"
@@ -40,10 +40,7 @@ class Navigation extends React.Component {
               </li>
               <li className="nav-item">
                 <NavLink exact to="/almacen" className="nav-link">Almacen</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink exact to="/user" className="nav-link" aria-current="page">User</NavLink>
-              </li>
+              </li>             
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
@@ -71,6 +68,9 @@ class Navigation extends React.Component {
                     <Link to="/folios" className="dropdown-item">Folios</Link>
                   </li>
                 </ul>
+              </li>
+              <li className="nav-item">
+                <NavLink exact to="/user" className="nav-link" aria-current="page">User</NavLink>
               </li>
             </ul>
           </div>

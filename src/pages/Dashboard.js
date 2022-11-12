@@ -16,13 +16,13 @@ class Dashboard extends React.Component {
                 <div className="container text-center" id="card">
                     <div className="row">
                         <div className="col">
-                            <CardDashboard title='Terminales activas' color="red"/>
+                            <CardDashboard title='Terminales activas' color="red" number={120}/>
                         </div>
                         <div className="col">
-                            <CardDashboard title="Terminales inactivas" color="blue"/>
+                            <CardDashboard title="Terminales inactivas" color="blue" number={7}/>
                         </div>
                         <div className="col">
-                            <CardDashboard title="Terminales reportadas" color="green"/>
+                            <CardDashboard title="Terminales reportadas" color="green" number={10}/>
                         </div>
                     </div>
                 </div>

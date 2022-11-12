@@ -10,7 +10,7 @@ import Error404 from './Error404';
 import Terminales from './Terminales';
 import User from './User';
 import Tareas from './Tareas';
-
+import Horario from './Horario';
 
 
 class Routes extends React.Component {
@@ -27,6 +27,7 @@ class Routes extends React.Component {
                 <Route path="/terminales" exact component={Terminales}/>
                 <Route path="/user" exact component={User}/>
                 <Route path="/tareas" exact component={Tareas}/>
+                <Route path="/horario" exact component={Horario}/>
                 <Route path="*" component={Error404} />
             </Switch>
         );
