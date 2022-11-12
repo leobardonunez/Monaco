@@ -28,7 +28,7 @@ class Modal extends React.Component {
             <div className="modal-content">
               <div className="modal-header">
                 <h1 className="modal-title fs-5" id="exampleModalLabel">
-                  Creando nueva tarea
+                  {this.props.title}
                 </h1>
                 <button
                   type="button"
@@ -76,7 +76,7 @@ class Modal extends React.Component {
                   cerrar
                 </button> */}
                 <button type="button" className="btn btn-success">
-                  Crear
+                  <i class="bi bi-check2"></i>
                 </button>
               </div>
             </div>

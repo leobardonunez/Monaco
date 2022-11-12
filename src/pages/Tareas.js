@@ -22,7 +22,7 @@ class Tareas extends React.Component {
               >
                 Nueva tarea
               </button>
-              <Modal/>
+              <Modal title="Creando nueva tarea"/>
             </div>
           </div>
           <div className="row">

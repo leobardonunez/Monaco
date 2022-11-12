@@ -13,7 +13,7 @@ class CardDashboard extends React.Component {
             <div className="card text-center shadow-lg" >
                 <div className="card-body">
                     <h5 className="card-title">{this.props.title}</h5>
-                    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <p className="card-text">{this.props.number}</p>
                 </div>
             </div>
         );

@@ -35,7 +35,7 @@ class Sidebar extends React.Component {
                 <small><span className="badge bg-success">Hace 3 dias</span></small>
               </div>
               <p className="mb-1">Horario de la semana</p>
-              <small>y actividades de proveedores.</small>
+              <small className="text-muted">y actividades de proveedores.</small>
               </NavLink>
             
             <NavLink exact to="/tareas" className="list-group-item list-group-item-action">
@@ -43,14 +43,14 @@ class Sidebar extends React.Component {
                 <h5 className="mb-1">Tareas y actividades</h5>
                 <small><span className="badge bg-success">Hace 3 dias</span></small>
               </div>
-              <p className="mb-1">Tareas a realizar en sala.</p>              
+              <small className="text-muted">Tareas a realizar en sala.</small>              
             </NavLink>            
             <NavLink to="/layout" className="list-group-item list-group-item-action">
               <div className="d-flex w-100 justify-content-between">
                 <h5>Layout</h5>
                 <small><span className="badge bg-success">Hace 3 dias</span></small>
               </div>
-              <p className="mb-1">Some placeholder content in a paragraph.</p>
+              <p className="mb-1">Croquis de terminales en sala.</p>
               <small className="text-muted">And some muted small print.</small>
             </NavLink>
           </div>
