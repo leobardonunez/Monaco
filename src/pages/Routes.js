@@ -8,6 +8,8 @@ import Almacen from './Almacen';
 import Layout from './Layout';
 import Error404 from './Error404';
 import Terminales from './Terminales';
+import User from './User';
+import Tareas from './Tareas';
 
 
 
@@ -23,6 +25,8 @@ class Routes extends React.Component {
                 <Route path="/almacen" exact component={Almacen} />
                 <Route path="/layout" exact component={Layout} />
                 <Route path="/terminales" exact component={Terminales}/>
+                <Route path="/user" exact component={User}/>
+                <Route path="/tareas" exact component={Tareas}/>
                 <Route path="*" component={Error404} />
             </Switch>
         );

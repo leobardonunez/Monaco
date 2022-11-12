@@ -13,14 +13,14 @@ class LayoutEntradaPersonal extends React.Component {
             <h3>Zona entrada personal</h3>
             <div className='row espaciado-row'>
             <div className="row">
-          <div className="col numero  ">1017</div>
-          <div className="col numero  ">1325</div>
-          <div className="col numero  ">1023</div>
-          <div className="col numero  ">1327</div>
-          <div className="col numero  ">1015</div>
-          <div className="col numero  ">1329</div>
-          <div className="col numero  ">1001</div>
-          <div className="col numero  ">1261</div>
+          <div className="col numero">1017</div>
+          <div className="col numero">1325</div>
+          <div className="col numero">1023</div>
+          <div className="col numero">1327</div>
+          <div className="col numero">1015</div>
+          <div className="col numero">1329</div>
+          <div className="col numero">1001</div>
+          <div className="col numero">1261</div>
           <div className="col espaciado">-</div>
         </div>
 
