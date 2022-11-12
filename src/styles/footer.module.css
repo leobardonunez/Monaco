@@ -1,13 +1,10 @@
 footer{
-    background-color:  rgb(81, 128, 102);   
+    background-color:  #EB3E3A;   
     padding: 1em 0;
     position: absolute;
     bottom: 0;
     width: 100%;   
-
-}
-span{
-    color: rgb(6, 48, 25);
+    color: white;   
 }
 
 

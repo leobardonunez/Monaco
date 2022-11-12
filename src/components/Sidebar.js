@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from 'react-router-dom'
+import {Link, NavLink} from 'react-router-dom'
 
 class Sidebar extends React.Component {
   constructor(props) {
@@ -28,34 +28,31 @@ class Sidebar extends React.Component {
         </div>
         <div className="offcanvas-body">
           <div className="list-group">
-            <a
-              
-              className="list-group-item list-group-item-action active"
-              aria-current="true"
-            >
+            
+              <NavLink exact to="/horario" className="list-group-item list-group-item-action" aria-current="true">
               <div className="d-flex w-100 justify-content-between">
                 <h5 className="mb-1">Horario</h5>
-                <small>3 days ago</small>
+                <small><span className="badge bg-success">Hace 3 dias</span></small>
               </div>
-              <p className="mb-1">Some placeholder content in a paragraph.</p>
-              <small>And some small print.</small>
-            </a>
-            <a  className="list-group-item list-group-item-action">
+              <p className="mb-1">Horario de la semana</p>
+              <small>y actividades de proveedores.</small>
+              </NavLink>
+            
+            <NavLink exact to="/tareas" className="list-group-item list-group-item-action">
               <div className="d-flex w-100 justify-content-between">
-                <h5 className="mb-1">Tareas</h5>
-                <small className="text-muted">3 days ago</small>
+                <h5 className="mb-1">Tareas y actividades</h5>
+                <small><span className="badge bg-success">Hace 3 dias</span></small>
               </div>
-              <p className="mb-1">Some placeholder content in a paragraph.</p>
-              <small className="text-muted">And some muted small print.</small>
-            </a>            
-            <Link to="/layout" className="list-group-item list-group-item-action">
+              <p className="mb-1">Tareas a realizar en sala.</p>              
+            </NavLink>            
+            <NavLink to="/layout" className="list-group-item list-group-item-action">
               <div className="d-flex w-100 justify-content-between">
                 <h5>Layout</h5>
-                <small className="text-muted">3 days ago</small>
+                <small><span className="badge bg-success">Hace 3 dias</span></small>
               </div>
               <p className="mb-1">Some placeholder content in a paragraph.</p>
               <small className="text-muted">And some muted small print.</small>
-            </Link>
+            </NavLink>
           </div>
         </div>
       </div>

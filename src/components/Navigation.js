@@ -10,14 +10,17 @@ class Navigation extends React.Component {
     return (
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
-          <a
+{/*           <a
             className="navbar-brand"
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasWithBothOptions"
             aria-controls="offcanvasWithBothOptions"
           >
             Monaco
-          </a>
+          </a> */}
+          <Link className="navbar-brand" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasWithBothOptions"
+            aria-controls="offcanvasWithBothOptions">Monaco</Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -33,13 +36,13 @@ class Navigation extends React.Component {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <NavLink exact to="/" className="nav-link" activeClassName="active">Dashboard</NavLink>
+                <NavLink exact to="/" className="nav-link">Dashboard</NavLink>
               </li>
               <li className="nav-item">
                 <NavLink exact to="/almacen" className="nav-link">Almacen</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink exact to="user" className="nav-link" aria-current="page">User</NavLink>
+                <NavLink exact to="/user" className="nav-link" aria-current="page">User</NavLink>
               </li>
               <li className="nav-item dropdown">
                 <a

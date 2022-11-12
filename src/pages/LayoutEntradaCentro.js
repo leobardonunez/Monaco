@@ -8,7 +8,7 @@ class LayoutEntradaCentro extends React.Component {
   render() {
     return (
       <>
-        <h3>Entrada Personal zona centro</h3>
+        <h3>Entrada personal zona centro</h3>
         <div className="row espaciado-row">
           <div className="row">
             <div className="col numero">1265</div>
