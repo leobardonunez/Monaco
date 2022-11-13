@@ -38,34 +38,17 @@ class Modal extends React.Component {
                 ></button>
               </div>
               <div className="modal-body">
-                <div className="row">
-                    <div className="col">
-                        <h6>Nombre:</h6>
-                    </div>
-                    <div className="col">
-                        <input type="text" className="form-control" placeholder="Nombre de la actividad"/>
-                        </div>
-                </div><br/>
-                <div className="row">
-                    <div className="col">
-                        <h6>Descripci&oacute;n:</h6>
-                    </div>
-                    <div className="col">
-                    <input type="text" className="form-control" placeholder="Breve descripci&oacute;n.."/>
-                    </div>
-                </div><br/>
-                <div className="row">
-                    <div className="col">
-                        <h6>Asignar</h6>
-                    </div>
-                    <div className="col">
-                        <select className="form-select">
-                            <option>Leobardo</option>
-                            <option>Edgar</option>
-                            <option>David</option>
-                        </select>
-                    </div>
-                </div>
+                {/* Elementos componente tareas */}
+                {this.props.elementNombre}                                
+                {this.props.elementDescripcion}
+                {this.props.elementAsignar}
+                {/* Elementos componente terminales */}
+                {this.props.elementFabricante}
+                {this.props.elementNombreTerminal}
+                {this.props.elementEstadoTerminal}
+                {this.props.elementAreaTerminal}
+                {this.props.elementProgramaTerminal}
+                {this.props.elementNumeroSerie}
               </div>
               <div className="modal-footer">
             {/*     <button
