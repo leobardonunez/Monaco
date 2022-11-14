@@ -13,33 +13,42 @@ class Table extends React.Component {
     state = {  }
     render() { 
         return (  
-        <table className="table table-dark table-striped table-hover">
+        <table className="table table-primary table-striped table-hover">
         <thead>
-          <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Serie</th>
-            <th scope="col">Categoria</th>
-            <th scope="col">Marca</th>
+          <tr>            
+            {/* Elementos de componente terminales */}
+            {this.props.thFabricante}
+            {this.props.thNombreTerminal}
+            {this.props.thEstadoTerminal}
+            {this.props.thAreaTerminal}
+            {this.props.thPrograma}
+            {this.props.thNumeroSerie}
+            {this.props.thOptions}
+            {/* Elementos de componente tareas */}
+            {this.props.thNombreTarea}
+            {this.props.thDescripcionTarea}
+            {this.props.thAsignacion}
+            {this.props.thEstadoTarea}
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            {/* Elementos de componente terminales */}
+            {this.props.tdFabricante}
+            {this.props.tdNombre}            
+            {this.props.tdEstado}
+            {this.props.tdArea}
+            {this.props.tdPrograma}
+            {this.props.tdSerie}
+            {this.props.tdOptions}
+            {/* Elementos de componente tareas */}
+            {this.props.tdNombreTarea}
+            {this.props.tdDescripcionTarea}
+            {this.props.tdAsignacionTarea}
+            {this.props.tdEstadoTarea}
           </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colSpan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
+    
+
         </tbody>
       </table> 
       );

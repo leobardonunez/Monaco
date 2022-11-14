@@ -10,13 +10,15 @@ class Almacen extends React.Component {
   state = {};
   render() {
     return (
-      <div className="container">
+      <>
         <h3>Almacen</h3>
-        <ButtonAdd />
-        <div className="row">
-          <Table />
+        <div className="container">
+          <ButtonAdd />
+          <div className="row">
+            <Table />
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 }
