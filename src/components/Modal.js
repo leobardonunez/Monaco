@@ -19,8 +19,7 @@ class Modal extends React.Component {
 
         <div
           className="modal fade"
-          id="exampleModal"
-          tabindex="-1"
+          id="exampleModal"          
           aria-labelledby="exampleModalLabel"
           aria-hidden="true"
         >
@@ -59,7 +58,7 @@ class Modal extends React.Component {
                   cerrar
                 </button> */}
                 <button type="button" className="btn btn-success">
-                  <i class="bi bi-check2"></i>
+                  <i className="bi bi-check2"></i>
                 </button>
               </div>
             </div>
