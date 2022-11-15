@@ -10,14 +10,6 @@ class Navigation extends React.Component {
     return (
       <nav className="navbar navbar-expand-lg sticky-top">
         <div className="container-fluid">
-{/*           <a
-            className="navbar-brand"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasWithBothOptions"
-            aria-controls="offcanvasWithBothOptions"
-          >
-            Monaco
-          </a> */}
           <Link className="navbar-brand" data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasWithBothOptions"
             aria-controls="offcanvasWithBothOptions">Monaco</Link>
@@ -64,11 +56,14 @@ class Navigation extends React.Component {
                     <Link to="/info" className="dropdown-item">Info</Link>
                   </li>
                   <li>
+                    <Link to="/proveedores" className="dropdown-item">Proveedores</Link>
+                  </li>
+                  <li>
                     <hr />
                     <Link to="/folios" className="dropdown-item">Folios</Link>
                   </li>
                 </ul>
-              </li>
+              </li>              
               <li className="nav-item">
                 <NavLink exact to="/user" className="nav-link" aria-current="page">User</NavLink>
               </li>

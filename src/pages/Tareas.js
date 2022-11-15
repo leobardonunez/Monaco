@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/tareas.css";
 import Modal from "../components/Modal.js";
 import Table from "../components/Table.js";
+import OptionsTable from "../components/OptionsTable";
 class Tareas extends React.Component {
   constructor(props) {
     super(props);
@@ -79,48 +80,62 @@ class Tareas extends React.Component {
           </div>
           <div className="row">
             <div className="col">
-              <Table 
-              thNombreTarea={
-                <>
-                <th scope="col">Nombre</th>
-                </>
-              }
-              thDescripcionTarea={
-                <>
-                <th scope="col">Descripci&oacute;n</th>
-                </>
-              }
-              thAsignacion={
-                <>
-                <th scope="col">Asignado a</th>
-                </>
-              }
-              thEstadoTarea={
-                <>
-                <th scope="col">Estado</th>
-                </>
-              }
-              /* Body */
-              tdNombreTarea={
-                <>
-                <td scope="col">Mantenimiento</td>
-                </>
-              }
-              tdDescripcionTarea={
-                <>
-                <td scope="col">Sopletear terminales E-gaming de fumadores.</td>
-                </>
-              }
-              tdAsignacionTarea={
+              <Table
+                thNombreTarea={
                   <>
-                <td scope="col">Leobardo</td>
-                </>
-              }
-              tdEstadoTarea={
-                <>
-                <td scope="col"><span className="badge bg-success">Completado</span></td>
-                </>
-              }
+                    <th scope="col">Nombre</th>
+                  </>
+                }
+                thDescripcionTarea={
+                  <>
+                    <th scope="col">Descripci&oacute;n</th>
+                  </>
+                }
+                thAsignacion={
+                  <>
+                    <th scope="col">Asignado a</th>
+                  </>
+                }
+                thEstadoTarea={
+                  <>
+                    <th scope="col">Estado</th>
+                  </>
+                }
+                thOptionsTarea={
+                  <>
+                    <th scope="col">Options</th>
+                  </>
+                }
+                /* Body */
+                tdNombreTarea={
+                  <>
+                    <td scope="col">Mantenimiento</td>
+                  </>
+                }
+                tdDescripcionTarea={
+                  <>
+                    <td scope="col">
+                      Sopletear terminales E-gaming de fumadores.
+                    </td>
+                  </>
+                }
+                tdAsignacionTarea={
+                  <>
+                    <td scope="col">Leobardo</td>
+                  </>
+                }
+                tdEstadoTarea={
+                  <>
+                    <td scope="col">
+                      <span className="badge bg-success">Completado</span>
+                    </td>
+                  </>
+                }
+                tdOptionsTarea={
+                  <>
+                    <OptionsTable />
+                  </>
+                }
               />
             </div>
           </div>

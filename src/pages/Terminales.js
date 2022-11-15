@@ -1,6 +1,7 @@
 import React from "react";
 import ButtonAdd from "../components/ButtonAdd";
 import Modal from "../components/Modal";
+import OptionsTable from "../components/OptionsTable";
 import Table from "../components/Table";
 import "../styles/terminales.css";
 
@@ -176,7 +177,9 @@ class Terminales extends React.Component {
               }
               tdEstado={
                 <>
-                  <td scope="col">Activo</td>
+                  <td scope="col">
+                    <span className="badge bg-success">Activo</span>
+                  </td>
                 </>
               }
               tdArea={
@@ -196,16 +199,7 @@ class Terminales extends React.Component {
               }
               tdOptions={
                 <>
-                  <td>
-                    <div className="col-2 d-grid gap-2 d-md-flex justify-content-start">
-                      <button type="button" className="btn btn-warning">
-                        <i class="bi bi-pencil"></i>
-                      </button>
-                      <button type="butotn" className="btn btn-danger">
-                        <i class="bi bi-trash2"></i>
-                      </button>
-                    </div>
-                  </td>
+                  <OptionsTable />
                 </>
               }
             />
