@@ -11,10 +11,10 @@ class OptionsTable extends React.Component {
         <td>
           <div className="col-2 d-grid gap-2 d-md-flex justify-content-start">
             <button type="button" className="btn btn-warning">
-              <i class="bi bi-pencil"></i>
+              <i className="bi bi-pencil"></i>
             </button>
             <button type="butotn" className="btn btn-danger">
-              <i class="bi bi-trash2"></i>
+              <i className="bi bi-trash2"></i>
             </button>
           </div>
         </td>
