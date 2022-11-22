@@ -1,7 +1,6 @@
 import React from "react";
 
 import Table from "../components/Table";
-import CardDashboard from "../components/CardDashboard";
 import "../styles/card-dashboard.css";
 
 class Dashboard extends React.Component {
@@ -18,32 +17,34 @@ class Dashboard extends React.Component {
           <div className="container text-center" id="card">
             <div className="row">
               <div className="col">
-                <CardDashboard
-                  title="Terminales activas"
-                  number={120}
-                  bgcolor="red"
-                />
+                <div className="card text-center shadow-lg">
+                  <div className="card-body">
+                    <h5 className="card-title">Terminales Activas</h5>
+                    <p className="card-text">89</p>                    
+                  </div>
+                </div>
               </div>
               <div className="col">
-                <CardDashboard
-                  title="Terminales inactivas"
-                  bgcolor="blue"
-                  number={7}
-                />
+                <div className="card text-center shadow-lg">
+                  <div className="card-body">
+                    <h5 className="card-title">Terminales Inactivas</h5>
+                    <p className="card-text">1</p>                    
+                  </div>
+                </div>
               </div>
               <div className="col">
-                <CardDashboard
-                  title="Terminales reportadas"
-                  bgcolor="green"
-                  number={10}
-                />
+                <div className="card text-center shadow-lg">
+                  <div className="card-body">
+                    <h5 className="card-title">Terminales reportadas</h5>
+                    <p className="card-text">21</p>                    
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         ) : (
           <></>
-        )}
-
+        )}        
         <div className="container">
           <Table
             thFabricante={
