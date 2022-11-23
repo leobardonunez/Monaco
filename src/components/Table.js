@@ -4,6 +4,8 @@ import React from "react";
 /*css*/
 import "../styles/table.css";
 
+
+
 class Table extends React.Component {
   constructor(props) {
     super(props);
@@ -36,6 +38,7 @@ class Table extends React.Component {
           <tbody>
             <tr>
               {/* Elementos de componente terminales */}
+              {/* {terminales.map((terminal)=> <td>{terminal.fabricante}</td>)} */}
               {this.props.tdFabricante}
               {this.props.tdNombre}
               {this.props.tdEstado}
