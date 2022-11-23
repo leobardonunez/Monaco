@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles/terminales.css";
+import { useHistory } from "react-router-dom";
 
 //Components
 import ButtonAdd from "../components/ButtonAdd";
@@ -8,33 +9,75 @@ import OptionsTable from "../components/OptionsTable";
 import Table from "../components/Table";
 
 //DB Firestore
-import { collection, getDocs, getDoc, deleteDoc } from "firebase/firestore";
+import {
+  doc,
+  collection,
+  getDocs,
+  getDoc,
+  deleteDoc,
+  addDoc
+} from "firebase/firestore";
 //Connection db
 import { db } from "../firebaseConfig/firebase";
 
 const Terminales = () => {
-  
-  
   //1 Configuramos los hooks
-  const [terminales, setTerminales] = useState([])
+  const [terminales, setTerminales] = useState([]);
+
   //2 Referenciamos a la Db firestore
-  const terminalesCollection = collection(db, "terminales")
+  const terminalesCollection = collection(db, "terminales");
+
   //3 Funcion para mostrar todos los docs
   const getTerminales = async () => {
-    const data = await getDocs(terminalesCollection)
-    //console.log(data);
-    setTerminales(
-      data.docs.map((doc) => ({...doc.data(), id:doc.id }))
-      )
-    console.log(terminales)
-  }
+    /* Formato del video */
+    const data = await getDocs(terminalesCollection);
+    console.log(data.docs);
+    setTerminales(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    console.log("Formato del video " + terminales);
+    /* Formato del video */
+
+    /*Formato documentacion firebase */
+    const querySnapshot = await getDocs(collection(db, "terminales"));
+    querySnapshot.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+      console.log(
+        "Formato documentacion Firebase " + doc.id,
+        " => ",
+        doc.data()
+      );
+    });
+    /*Formato documentacion firebase */
+  };
   //4 Funcion para eliminar un doc
+  const deleteTerminal = async (id) => {
+    const terminalDoc = doc(db, "terminales", id);
+    await deleteDoc(terminalDoc);
+    getTerminales();
+  };
   //5 Usamos useEffect
   useEffect(() => {
-    getTerminales()
-  }, [])
-  //6 Devolvemos la vista al componente
+    getTerminales();
+    //eslint-disable-next-line
+  }, []);
 
+
+  //Create
+  const [fabricante , setFabricante] = useState('')
+  const [home , setHome] = useState(0)
+  const [estado , setEstado] = useState('')
+  const [area , setArea] = useState('')
+  const [programa , setPrograma] = useState('')
+  const [serie , setSerie] = useState('')
+  const history = useHistory();
+  //referencia a coleccion
+  const terminalesCollectionAdd = collection(db, "terminales");
+  //funcion almacenar
+  const store = async (e) =>{
+    e.preventDefault()
+    await addDoc( terminalesCollectionAdd , { fabricante: fabricante , home: home , estado: estado , area: area , programa: programa , serie: serie})
+    /* useHistory('/terminales') */
+    
+  }
 
   return (
     <>
@@ -46,188 +89,169 @@ const Terminales = () => {
               type="button"
               className="btn btn-primary"
               data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
+              data-bs-target="#modalTerminales"
             >
               Nueva terminal
             </button>
-            <Modal
-              title="Añadiendo nueva terminal"
-              elementFabricante={
-                <>
-                  <div className="row">
-                    <div className="col">
-                      <h6>Fabricante:</h6>
+            {/* Modal */}
+
+            <div
+              className="modal fade"
+              id="modalTerminales"
+              aria-labelledby="modalTerminalesLabel"
+              aria-hidden="true"
+            >
+              <div className="modal-dialog">
+              <form onSubmit={store}>
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h1 className="modal-title fs-5" id="modalTerminalesLabel">
+                      Añadir nueva terminal
+                    </h1>
+                    <button
+                      type="button"
+                      className="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div className="modal-body">
+                    {/* Elementos componente terminales */}
+                    <div className="row">
+                      <div className="col">
+                        <h6>Fabricante:</h6>
+                      </div>
+                      <div className="col">
+                        <input
+                          value={fabricante}
+                          onChange={(e) => setFabricante(e.target.value)}
+                          type="text"
+                          className="form-control"
+                          placeholder="Nombre del fabricante"
+                        />
+                      </div>
                     </div>
-                    <div className="col">
+                    <br />
+                    <div className="row">
+                      <div className="col">
+                        <h6>Nombre:</h6>
+                      </div>
+                      <div className="col">
+                        <input
+                          value={home}
+                          onChange={(e) => setHome(e.target.value)}
+                          type="text"
+                          className="form-control"
+                          placeholder="Nombre de terminal"
+                        />
+                      </div>
+                    </div>
+                    <br />
+                    <div className="row">
+                      <div className="col">
+                        <h6>Estado:</h6>
+                      </div>
+                      <div className="col">
                       <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Nombre del fabricante"
-                      />
+                       value={estado}
+                       onChange={(e) => setEstado(e.target.value)}
+                       type="text"
+                       className="form-control"
+                       placeholder="Estado de terminal"
+                       />
+                      </div>
+                    </div>
+                    <br />
+                    <div className="row">
+                      <div className="col">
+                        <h6>&Aacute;rea:</h6>
+                      </div>
+                      <div className="col">
+                       <input
+                       value={area}
+                       onChange={(e) => setArea(e.target.value)}
+                       type="text"
+                       className="form-control"
+                       placeholder="Area de sala"
+                       />
+                      </div>
+                    </div>
+                    <br />
+                    <div className="row">
+                      <div className="col">
+                        <h6>Programa:</h6>
+                      </div>
+                      <div className="col">
+                        <input
+                          value={programa}
+                          onChange={(e) => setPrograma(e.target.value)}
+                          type="text"
+                          className="form-control"
+                          placeholder="Programa de terminal"
+                        />
+                      </div>
+                    </div>
+                    <br />
+                    <div className="row">
+                      <div className="col">
+                        <h6>Serie:</h6>
+                      </div>
+                      <div className="col">
+                        <input
+                          value={serie}
+                          onChange={(e) => setSerie(e.target.value)}
+                          type="text"
+                          className="form-control"
+                          placeholder="Numero serie"
+                        />
+                      </div>
                     </div>
                   </div>
-                  <br />
-                </>
-              }
-              elementNombreTerminal={
-                <>
-                  <div className="row">
-                    <div className="col">
-                      <h6>Nombre:</h6>
-                    </div>
-                    <div className="col">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Nombre de terminal"
-                      />
-                    </div>
+                  <div className="modal-footer">
+                    <button type="submit" className="btn btn-success">
+                      <i className="bi bi-check2"></i>
+                    </button>
                   </div>
-                  <br />
-                </>
-              }
-              elementEstadoTerminal={
-                <>
-                  <div className="row">
-                    <div className="col">
-                      <h6>Estado:</h6>
-                    </div>
-                    <div className="col">
-                      <select className="form-select">
-                        <option>Activo</option>
-                        <option>Inactivo</option>
-                      </select>
-                    </div>
-                  </div>
-                  <br />
-                </>
-              }
-              elementAreaTerminal={
-                <>
-                  <div className="row">
-                    <div className="col">
-                      <h6>&Aacute;rea:</h6>
-                    </div>
-                    <div className="col">
-                      <select className="form-select">
-                        <option>Fumar</option>
-                        <option>No fumar</option>
-                      </select>
-                    </div>
-                  </div>
-                  <br />
-                </>
-              }
-              elementProgramaTerminal={
-                <>
-                  <div className="row">
-                    <div className="col">
-                      <h6>Programa:</h6>
-                    </div>
-                    <div className="col">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Programa de terminal"
-                      />
-                    </div>
-                  </div>
-                  <br />
-                </>
-              }
-              elementNumeroSerie={
-                <>
-                  <div className="row">
-                    <div className="col">
-                      <h6>Serie:</h6>
-                    </div>
-                    <div className="col">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Numero serie"
-                      />
-                    </div>
-                  </div>
-                </>
-              }
-            />
+                </div>
+                </form>
+              </div>
+            </div>
+            {/* Modal */}
           </div>
-          <Table
-            thFabricante={
-              <>
-                <th scope="col">Fabricante</th>
-              </>
-            }
-            thNombreTerminal={
-              <>
-                <th scope="col">Nombre</th>
-              </>
-            }
-            thEstadoTerminal={
-              <>
-                <th scope="col">Estado</th>
-              </>
-            }
-            thAreaTerminal={
-              <>
-                <th scope="col">&Aacute;rea</th>
-              </>
-            }
-            thPrograma={
-              <>
-                <th scope="col">Programa</th>
-              </>
-            }
-            thNumeroSerie={
-              <>
-                <th scope="col">Numero de serie</th>
-              </>
-            }
-            thOptions={
-              <>
-                <th scope="col">Opciones</th>
-              </>
-            }
-            /* Body */
-            tdFabricante={
-              <>
-                <td scope="col">Bally</td>
-              </>
-            }
-            tdNombre={
-              <>
-                <td scope="col">1001-Bally</td>
-              </>
-            }
-            tdEstado={
-              <>
-                <td scope="col">
-                  <span className="badge bg-success">Activo</span>
-                </td>
-              </>
-            }
-            tdArea={
-              <>
-                <td scope="col">No fumar</td>
-              </>
-            }
-            tdPrograma={
-              <>
-                <td scope="col">Spirit</td>
-              </>
-            }
-            tdSerie={
-              <>
-                <td scope="col">B130480437</td>
-              </>
-            }
-            tdOptions={
-              <>
-                <OptionsTable />
-              </>
-            }
-          />
+          <div className="table-responsive">
+            <table className="table table-primary table-striped table-hover table-sm">
+              <thead>
+                <tr>
+                  <th scope="col">Fabricante</th>
+                  <th scope="col">Home</th>
+                  <th scope="col">Estado</th>
+                  <th scope="col">Area</th>
+                  <th scope="col">Programa</th>
+                  <th scope="col">Serie</th>
+                  <th scope="col">Options</th>
+                </tr>
+              </thead>
+              <tbody>
+                {terminales.map((terminal) => (
+                  <tr key={terminal.id}>
+                    <td scope="col">{terminal.fabricante}</td>
+                    <td scope="col">{terminal.home}</td>
+                    <td scope="col">
+                      <span className="badge bg-success">
+                        {terminal.estado}
+                      </span>
+                    </td>
+                    <td scope="col">{terminal.area}</td>
+                    <td scope="col">{terminal.programa}</td>
+                    <td scope="col">{terminal.serie}</td>
+                    <td>
+                      <OptionsTable />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </>

@@ -1,0 +1,106 @@
+Modal de componente terminales
+
+
+
+         <Modal
+              title="Añadiendo nueva terminal"
+              elementFabricante={
+                <>
+                  <div className="row">
+                    <div className="col">
+                      <h6>Fabricante:</h6>
+                    </div>
+                    <div className="col">
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Nombre del fabricante"
+                      />
+                    </div>
+                  </div>
+                  <br />
+                </>
+              }
+              elementNombreTerminal={
+                <>
+                  <div className="row">
+                    <div className="col">
+                      <h6>Nombre:</h6>
+                    </div>
+                    <div className="col">
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Nombre de terminal"
+                      />
+                    </div>
+                  </div>
+                  <br />
+                </>
+              }
+              elementEstadoTerminal={
+                <>
+                  <div className="row">
+                    <div className="col">
+                      <h6>Estado:</h6>
+                    </div>
+                    <div className="col">
+                      <select className="form-select">
+                        <option>Activo</option>
+                        <option>Inactivo</option>
+                      </select>
+                    </div>
+                  </div>
+                  <br />
+                </>
+              }
+              elementAreaTerminal={
+                <>
+                  <div className="row">
+                    <div className="col">
+                      <h6>&Aacute;rea:</h6>
+                    </div>
+                    <div className="col">
+                      <select className="form-select">
+                        <option>Fumar</option>
+                        <option>No fumar</option>
+                      </select>
+                    </div>
+                  </div>
+                  <br />
+                </>
+              }
+              elementProgramaTerminal={
+                <>
+                  <div className="row">
+                    <div className="col">
+                      <h6>Programa:</h6>
+                    </div>
+                    <div className="col">
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Programa de terminal"
+                      />
+                    </div>
+                  </div>
+                  <br />
+                </>
+              }
+              elementNumeroSerie={
+                <>
+                  <div className="row">
+                    <div className="col">
+                      <h6>Serie:</h6>
+                    </div>
+                    <div className="col">
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Numero serie"
+                      />
+                    </div>
+                  </div>
+                </>
+              }
+            />
