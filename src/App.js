@@ -1,36 +1,25 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { BrowserRouter as Router } from "react-router-dom";
 
 //Import components
-import Table from './components/Table';
-import CardDashboard from './components/CardDashboard';
+import Navigation from "./components/Navigation";
+import Sidebar from "./components/Sidebar";
+import Routes from "./pages/Routes";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="App">
-      {/*    <header className="App-header">
-
-      </header> */}
-      <section>
-        <div className='container text-center' id='card'>
-          <div className='row'>
-            <div className="col">
-              <CardDashboard />
-            </div>
-            <div className='col'>
-              <CardDashboard />
-            </div>
-            <div className='col'>
-              <CardDashboard />
-            </div>
-          </div>
-        </div>
-        <div className='container'>
-          <Table />
-        </div>
-
-      </section>
-    </div>
+    <>
+      <div className="App">
+        <Router>
+          <Navigation />
+          <Sidebar />
+          <Routes />
+        </Router>
+      </div>
+      <Footer />
+    </>
   );
 }
 

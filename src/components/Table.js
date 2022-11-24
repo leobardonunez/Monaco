@@ -1,49 +1,63 @@
 /*import React , {Component} from "react";*/
 import React from "react";
 
-
 /*css*/
-import '../styles/table.css'
+import "../styles/table.css";
+
 
 
 class Table extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    state = {  }
-    render() { 
-        return (  <table class="table table-dark table-striped table-hover">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table> );
-    }
+  constructor(props) {
+    super(props);
+  }
+  state = {
+    user: true,
+  };
+  render() {
+    return (
+      <div className="table-responsive">
+        <table className="table table-primary table-striped table-hover table-sm">
+          <thead>
+            <tr>
+              {/* Elementos de componente terminales */}
+              {this.props.thFabricante}
+              {this.props.thNombreTerminal}
+              {this.props.thEstadoTerminal}
+              {this.props.thAreaTerminal}
+              {this.props.thPrograma}
+              {this.props.thNumeroSerie}              
+              {this.state.user ? this.props.thOptions : <></>}
+              {/* Elementos de componente tareas */}
+              {this.props.thNombreTarea}
+              {this.props.thDescripcionTarea}
+              {this.props.thAsignacion}
+              {this.props.thEstadoTarea}
+              {this.state.user ? this.props.thOptionsTarea : <></>}              
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              {/* Elementos de componente terminales */}
+              {/* {terminales.map((terminal)=> <td>{terminal.fabricante}</td>)} */}
+              {this.props.tdFabricante}
+              {this.props.tdNombre}
+              {this.props.tdEstado}
+              {this.props.tdArea}
+              {this.props.tdPrograma}
+              {this.props.tdSerie}
+              {this.state.user ? this.props.tdOptions : <></>}              
+              {/* Elementos de componente tareas */}
+              {this.props.tdNombreTarea}
+              {this.props.tdDescripcionTarea}
+              {this.props.tdAsignacionTarea}
+              {this.props.tdEstadoTarea}
+              {this.state.user ? this.props.tdOptionsTarea : <></>}              
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    );
+  }
 }
- 
+
 export default Table;
-
-
