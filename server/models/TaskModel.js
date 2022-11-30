@@ -4,9 +4,25 @@ import db from "../database/db.js";
 import {DataTypes} from 'sequelize'
 
 
-const TaskModel = db.define('task' , {
+const TaskModel = db.define('tasks' , {    
     name: { type: DataTypes.STRING},
-    description: {type: DataTypes.STRING}
+    description: {type: DataTypes.STRING},
+    asigned_to: {type: DataTypes.INTEGER},
+    state: {type: DataTypes.BOOLEAN}
 })
+
+
+/* Error de nombre de tabla y columnas (createdAt , updatedAt)
+const TaskModel = db.define('tasks' , {    
+    name: { type: DataTypes.STRING},
+    description: {type: DataTypes.STRING}    
+},
+{
+    timestamps: false,
+    freezeYableName: true,
+    tableName: tasks
+}) */
+
+
 
 export default TaskModel;

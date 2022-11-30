@@ -36,23 +36,7 @@ class Table extends React.Component {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              {/* Elementos de componente terminales */}
-              {/* {terminales.map((terminal)=> <td>{terminal.fabricante}</td>)} */}
-              {this.props.tdFabricante}
-              {this.props.tdNombre}
-              {this.props.tdEstado}
-              {this.props.tdArea}
-              {this.props.tdPrograma}
-              {this.props.tdSerie}
-              {this.state.user ? this.props.tdOptions : <></>}              
-              {/* Elementos de componente tareas */}
-              {this.props.tdNombreTarea}
-              {this.props.tdDescripcionTarea}
-              {this.props.tdAsignacionTarea}
-              {this.props.tdEstadoTarea}
-              {this.state.user ? this.props.tdOptionsTarea : <></>}              
-            </tr>
+            {this.props.tdNombreTarea}    
           </tbody>
         </table>
       </div>
@@ -61,3 +45,4 @@ class Table extends React.Component {
 }
 
 export default Table;
+
