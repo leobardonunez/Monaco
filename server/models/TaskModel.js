@@ -8,7 +8,7 @@ const TaskModel = db.define('tasks' , {
     name: { type: DataTypes.STRING},
     description: {type: DataTypes.STRING},
     asigned_to: {type: DataTypes.INTEGER},
-    state: {type: DataTypes.BOOLEAN}
+    estado: {type: DataTypes.BOOLEAN}
 })
 
 

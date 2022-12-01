@@ -3,7 +3,7 @@ CREATE TABLE tasks (
     name VARCHAR(200) NOT NULL,
     description VARCHAR(300),  
     asigned_to INTEGER NOT NULL,
-    state BOOLEAN NOT NULL DEFAULT 0,
+    estado BOOLEAN NOT NULL DEFAULT 0,
     createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updatedAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
@@ -12,4 +12,4 @@ CREATE TABLE tasks (
     state BOOLEAN NOT NULL DEFAULT 0,
      created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 
-    INSERT INTO tasks(name , description , asigned_to , state) VALUES("Mi primer tarea" , "Dar mantenimiento a wm 1011" , 1 , 0);
+    INSERT INTO tasks(name , description , asigned_to , estado) VALUES("Mi primer tarea" , "Dar mantenimiento a wm 1011" , 1 , 0);
