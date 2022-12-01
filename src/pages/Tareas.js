@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 //Components
 import Modal from "../components/Modal";
 import Table from "../components/Table";
+import OptionsTable from "../components/OptionsTable";
 
 const URI = "http://localhost:4000/tasks/";
 
@@ -96,29 +97,7 @@ const Tareas = () => {
             />
           </div>
         </div>
-        <div className="row">
-          <div className="col">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">Nombre</th>
-                  <th scope="col">Descripci&oacute;n</th>
-                  <th scope="col">Asignado a</th>
-                  <th scope="col">Estado</th>
-                  <th scope="col">Options</th>
-                </tr>
-              </thead>
-              <tbody>
-                {task.map((task) => (
-                  <tr key={task.id}>
-                    <td>{task.name}</td>
-                    <td>{task.description}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
+
 
         {/* Tabla reactiva */}
         <Table
@@ -154,18 +133,14 @@ const Tareas = () => {
                 <tr key={task.id}>
                   <td scope="col">{task.name}</td>
                   <td scope="col">{task.description}</td>
-                  <td scope="col">{task.asigned_to}</td>
-                  if(task.state===1){
-                     <td scope="col">Completada</td>
-                  }else{
-                    <td scope="col">No completada</td>
-                  }                  
+                  <td scope="col">{task.asigned_to}</td>                   
+                  <td scope="col">{task.estado ?  <span className="badge bg-success">Completada</span> : <span className="badge bg-danger">No completada</span>}</td>
+                  {<OptionsTable/>}                  
                 </tr>
               ))}              
             </>
           }
-        />
-
+        />   
       </div>
     </>
   );
