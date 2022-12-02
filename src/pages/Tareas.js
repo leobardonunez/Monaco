@@ -11,6 +11,8 @@ import OptionsTable from "../components/OptionsTable";
 const URI = "http://localhost:4000/tasks/";
 
 const Tareas = () => {
+  const [nombre, setName] = useState("");
+
   const [task, setTask] = useState([]);
   useEffect(() => {
     getTasks();
@@ -55,6 +57,8 @@ const Tareas = () => {
                         type="text"
                         className="form-control"
                         placeholder="Nombre de la actividad"
+                        value="nombre"
+                        onChange={(e)=> setName(e.target.value)}                        
                       />
                     </div>
                   </div>
@@ -71,7 +75,7 @@ const Tareas = () => {
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="Breve descripci&oacute;n.."
+                        placeholder="Breve descripci&oacute;n.."                        
                       />
                     </div>
                   </div>
@@ -90,8 +94,26 @@ const Tareas = () => {
                         <option>Edgar</option>
                         <option>David</option>
                       </select>
-                    </div>
+                    </div>                    
                   </div>
+                  <br/>
+                </>
+              }
+              elementEstadoTarea={
+                <>
+                <div className="row">
+                  <div className="col">
+                    <h6>Estado</h6>                    
+                  </div>
+                  <div className="col">
+                  <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Estado de la tarea"                       
+                      />
+                  </div>
+                </div>
+                <br/>
                 </>
               }
             />
