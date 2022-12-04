@@ -11,8 +11,6 @@ import OptionsTable from "../components/OptionsTable";
 const URI = "http://localhost:4000/tasks/";
 
 const Tareas = () => {
-  const [nombre, setName] = useState("");
-
   const [task, setTask] = useState([]);
   useEffect(() => {
     getTasks();
@@ -26,7 +24,7 @@ const Tareas = () => {
 
   //Eliminar una tarea
   const deleteTask = async (id) => {
-    axios.delete(`${URI}${id}`);
+    await axios.delete(`${URI}${id}`);
     getTasks();
   };
 
@@ -44,82 +42,9 @@ const Tareas = () => {
             >
               Nueva tarea
             </button>
-            <Modal
-              title="Creando nueva tarea"
-              elementNombre={
-                <>
-                  <div className="row">
-                    <div className="col">
-                      <h6>Nombre:</h6>
-                    </div>
-                    <div className="col">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Nombre de la actividad"
-                        value="nombre"
-                        onChange={(e)=> setName(e.target.value)}                        
-                      />
-                    </div>
-                  </div>
-                  <br />
-                </>
-              }
-              elementDescripcion={
-                <>
-                  <div className="row">
-                    <div className="col">
-                      <h6>Descripci&oacute;n:</h6>
-                    </div>
-                    <div className="col">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Breve descripci&oacute;n.."                        
-                      />
-                    </div>
-                  </div>
-                  <br />
-                </>
-              }
-              elementAsignar={
-                <>
-                  <div className="row">
-                    <div className="col">
-                      <h6>Asignar</h6>
-                    </div>
-                    <div className="col">
-                      <select className="form-select">
-                        <option>Leobardo</option>
-                        <option>Edgar</option>
-                        <option>David</option>
-                      </select>
-                    </div>                    
-                  </div>
-                  <br/>
-                </>
-              }
-              elementEstadoTarea={
-                <>
-                <div className="row">
-                  <div className="col">
-                    <h6>Estado</h6>                    
-                  </div>
-                  <div className="col">
-                  <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Estado de la tarea"                       
-                      />
-                  </div>
-                </div>
-                <br/>
-                </>
-              }
-            />
+            <Modal />
           </div>
         </div>
-
 
         {/* Tabla reactiva */}
         <Table
@@ -155,14 +80,29 @@ const Tareas = () => {
                 <tr key={task.id}>
                   <td scope="col">{task.name}</td>
                   <td scope="col">{task.description}</td>
-                  <td scope="col">{task.asigned_to}</td>                   
-                  <td scope="col">{task.estado ?  <span className="badge bg-success">Completada</span> : <span className="badge bg-danger">No completada</span>}</td>
-                  {<OptionsTable/>}                  
+                  <td scope="col">{task.asigned_to}</td>
+                  <td scope="col">
+                    {task.estado ? (
+                      <span className="badge bg-success">Completada</span>
+                    ) : (
+                      <span className="badge bg-danger">No completada</span>
+                    )}
+                  </td>
+                  <td>
+        <div className="col-2 d-grid gap-2 d-md-flex justify-content-start">
+          <button type="button" className="btn btn-primary">
+            <i className="bi bi-pencil"></i>
+          </button>
+          <button type="butotn" className="btn btn-secondary" onClick={()=>deleteTask(task.id)}>
+            <i className="bi bi-trash2"></i>
+          </button>
+        </div>
+      </td>
                 </tr>
-              ))}              
+              ))}
             </>
           }
-        />   
+        />
       </div>
     </>
   );
