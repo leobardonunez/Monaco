@@ -1,12 +1,11 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 
 //Components
 import Modal from "../components/Modal";
-import Table from "../components/Table";
-import OptionsTable from "../components/OptionsTable";
+import Table from "../components/table-component/Table";
+import OptionsTable from "../components/table-component/OptionsTable";
 
 const URI = "http://localhost:4000/tasks/";
 
@@ -20,6 +19,7 @@ const Tareas = () => {
   const getTasks = async () => {
     const res = await axios.get(URI);
     setTask(res.data);
+    console.log("Estas son las tareas: " + res.data);
   };
 
   //Eliminar una tarea
@@ -89,15 +89,19 @@ const Tareas = () => {
                     )}
                   </td>
                   <td>
-        <div className="col-2 d-grid gap-2 d-md-flex justify-content-start">
-          <button type="button" className="btn btn-primary">
-            <i className="bi bi-pencil"></i>
-          </button>
-          <button type="butotn" className="btn btn-secondary" onClick={()=>deleteTask(task.id)}>
-            <i className="bi bi-trash2"></i>
-          </button>
-        </div>
-      </td>
+                    <div className="col-2 d-grid gap-2 d-md-flex justify-content-start">
+                      <button type="button" className="btn btn-primary">
+                        <i className="bi bi-pencil"></i>
+                      </button>
+                      <button
+                        type="butotn"
+                        className="btn btn-secondary"
+                        onClick={() => deleteTask(task.id)}
+                      >
+                        <i className="bi bi-trash2"></i>
+                      </button>
+                    </div>
+                  </td>
                 </tr>
               ))}
             </>

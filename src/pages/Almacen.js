@@ -1,6 +1,6 @@
 import React from "react";
-import ButtonAdd from "../components/ButtonAdd";
-import Table from "../components/Table";
+import ButtonAdd from "../components/button-component/ButtonAdd";
+import Table from "../components/table-component/Table";
 import "../styles/almacen.css";
 
 class Almacen extends React.Component {

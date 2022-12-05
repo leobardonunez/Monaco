@@ -1,17 +1,7 @@
-import React from 'react';
+import React from "react";
 
+const Horario = (props) => {
+  return <></>;
+};
 
-
-class Horario extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    state = {  }
-    render() { 
-        return ( 
-            <></>
-         );
-    }
-}
- 
 export default Horario;

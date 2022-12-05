@@ -1,18 +1,11 @@
-import React from 'react'
+import React from "react";
 
-
-
-class LayoutEntradaPersonal extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    state = {  }
-    render() { 
-        return ( 
-            <>
-            <h3>Zona entrada personal</h3>
-            <div className='row espaciado-row'>
-            <div className="row">
+const LayoutEntradaPersonal = (props) => {
+  return (
+    <>
+      <h3>Zona entrada personal</h3>
+      <div className="row espaciado-row">
+        <div className="row">
           <div className="col numero">1017</div>
           <div className="col numero">1325</div>
           <div className="col numero">1023</div>
@@ -24,20 +17,6 @@ class LayoutEntradaPersonal extends React.Component {
           <div className="col espaciado">-</div>
         </div>
 
-
-        <div className="row">
-          <div className="col espaciado">-</div>
-          <div className="col espaciado">-</div>
-          <div className="col espaciado">-</div>
-          <div className="col espaciado">-</div>
-          <div className="col espaciado">-</div>
-          <div className="col espaciado">-</div>
-          <div className="col espaciado">-</div>
-          <div className="col espaciado">-</div>
-          <div className="col espaciado">-</div>
-        </div>
-
-
         <div className="row">
           <div className="col espaciado">-</div>
           <div className="col espaciado">-</div>
@@ -62,6 +41,17 @@ class LayoutEntradaPersonal extends React.Component {
           <div className="col espaciado">-</div>
         </div>
 
+        <div className="row">
+          <div className="col espaciado">-</div>
+          <div className="col espaciado">-</div>
+          <div className="col espaciado">-</div>
+          <div className="col espaciado">-</div>
+          <div className="col espaciado">-</div>
+          <div className="col espaciado">-</div>
+          <div className="col espaciado">-</div>
+          <div className="col espaciado">-</div>
+          <div className="col espaciado">-</div>
+        </div>
 
         <div className="row">
           <div className="col numero">1563</div>
@@ -74,7 +64,6 @@ class LayoutEntradaPersonal extends React.Component {
           <div className="col espaciado">-</div>
           <div className="col espaciado">-</div>
         </div>
-
 
         <div className="row">
           <div className="col numero">1562</div>
@@ -124,7 +113,6 @@ class LayoutEntradaPersonal extends React.Component {
           <div className="col espaciado">-</div>
         </div>
 
-
         <div className="row">
           <div className="col numero">1433</div>
           <div className="col espaciado">-</div>
@@ -172,7 +160,6 @@ class LayoutEntradaPersonal extends React.Component {
           <div className="col espaciado">-</div>
           <div className="col espaciado">-</div>
         </div>
-
 
         <div className="row">
           <div className="col numero">1360</div>
@@ -245,10 +232,9 @@ class LayoutEntradaPersonal extends React.Component {
           <div className="col espaciado">-</div>
           <div className="col espaciado">-</div>
         </div>
-            </div>
-            </>
-         );
-    }
-}
- 
+      </div>
+    </>
+  );
+};
+
 export default LayoutEntradaPersonal;

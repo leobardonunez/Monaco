@@ -1,8 +1,7 @@
 import React from "react";
 import axios from "axios";
-import { useState, useEffect } from "react";
-import Tareas from "../pages/Tareas";
-import FormTareas from "./FormTareas";
+import { useState } from "react";
+import FormTareas from "./form-component/FormTareas";
 
 const URI = "http://localhost:4000/tasks/";
 

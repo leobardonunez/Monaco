@@ -1,16 +1,15 @@
 import React from "react";
 import axios from "axios";
-import { useState, useEffect } from "react";
-import SelectEstados from "./SelectEstados";
-import SelectTecnicos from "./SelectTecnicos";
+import { useState } from "react";
+import SelectEstados from "../select-component/SelectEstados";
+import SelectTecnicos from "../select-component/SelectTecnicos";
 
 const URI = "http://localhost:4000/tasks/";
 
 const FormTareas = (props) => {
   const [nombre, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [asigned_to, setAsignedTo] = useState("");
-  const [estado, setEstado] = useState("");
+  const [asigned_to, setAsignedTo] = useState("");  
 
   //Agregar una tarea
   const store = async (e) => {
@@ -18,8 +17,7 @@ const FormTareas = (props) => {
     await axios.post(URI, {
       name: nombre,
       description: description,
-      asigned_to: asigned_to,
-      estado: estado,
+      asigned_to: asigned_to     
     });    
   }  
 
@@ -71,17 +69,18 @@ const FormTareas = (props) => {
           <br />
           <div className="row">
             <div className="col">
-              <h6>Asignar</h6>
+              <h6>Asignar a:</h6>
             </div>
             <div className="col">
-              <SelectTecnicos
-                value={asigned_to}
+              <SelectTecnicos   
+                value={props.id_select}            
                 onChange={(e) => setAsignedTo(e.target.value)}
               />
             </div>
+            {console.log(props.id_select)}            
           </div>
           <br />
-          <div className="row">
+       {/*    <div className="row">
             <div className="col">
               <h6>Estado</h6>
             </div>
@@ -91,7 +90,7 @@ const FormTareas = (props) => {
                 onChange={(e) => setEstado(e.target.value)}
               />
             </div>
-          </div>
+          </div> */}
           <br />
 
           {/* Elementos componente terminales */}
