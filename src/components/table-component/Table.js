@@ -2,8 +2,7 @@
 import React from "react";
 
 /*css*/
-import "../styles/table.css";
-
+import "../../styles/table.css";
 
 
 class Table extends React.Component {

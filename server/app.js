@@ -1,13 +1,16 @@
 import express from 'express';
 import cors from 'cors';
 import db from './database/db.js';
-import taskRoutes from './routes/routes.js'
+import taskRouter from './routes/TaskRouter.js';
+import tecnicoRouter from './routes/TecnicoRouter.js';
+
 
 const app = express()
 
 app.use(cors())
 app.use(express.json())
-app.use('/tasks' , taskRoutes)
+app.use('/tasks' , taskRouter) 
+app.use('/tecnicos' , tecnicoRouter)
 
 
 try {

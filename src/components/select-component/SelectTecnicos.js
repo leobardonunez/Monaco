@@ -1,12 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
-const URI = "http://localhost:4000/tasks/";
+const URI = "http://localhost:4000/tecnicos/";
 
-const SelectTecnicos = () => {
-  const [tecnico, setTecnico] = useState([]);
+const SelectTecnicos = (props) => {
+  const [tecnico, setTecnico] = useState([]);  
   useEffect(() => {
-    getTecnicos();    
+    getTecnicos();
   }, []);
 
   //Mostrar todos los tecnicos
@@ -17,12 +17,13 @@ const SelectTecnicos = () => {
   };
 
   return (
-    <>      
+    <>
       <select className="form-select">
-      {/*  {tecnico.nombre.map(el =>(
-        <option key={el.id} value={el.id}>{el.nombre}</option>
-       ))} */}
-      </select>
+        {tecnico.map((tecnico) => (
+          <option key={tecnico.id} id_select={tecnico.id}>{tecnico.nombre}</option>
+        
+        ))}        
+      </select>                  
     </>
   );
 };

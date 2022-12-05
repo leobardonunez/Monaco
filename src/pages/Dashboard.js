@@ -1,6 +1,6 @@
 import React from "react";
 
-import Table from "../components/Table";
+import Table from "../components/table-component/Table";
 import "../styles/card-dashboard.css";
 
 class Dashboard extends React.Component {

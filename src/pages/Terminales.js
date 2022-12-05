@@ -1,15 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "../styles/terminales.css";
 
 //Components
-import ButtonAdd from "../components/ButtonAdd";
-import Modal from "../components/Modal";
-import OptionsTable from "../components/OptionsTable";
-import Table from "../components/Table";
+import OptionsTable from "../components/table-component/OptionsTable";
 
 
 
-const Terminales = () => {
+
+const Terminales = (props) => {
   return (
     <>
       <h3>Terminales</h3>
@@ -23,8 +21,7 @@ const Terminales = () => {
               data-bs-target="#modalTerminales"
             >
               Nueva terminal
-            </button>
-            {/* Modal */}
+            </button>            
 
             <div
               className="modal fade"
