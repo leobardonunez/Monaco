@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
-const SelectEstados = () => {
+const URI ="http://localhost/estados";
+
+const SelectEstados = (props) => {
+  const [estado , setEstados] = useState([]);
+  useEffect(()=>{
+    getEstados();
+  } , [])
+
+
+  //Mostrar todos los estados
+  const getEstados = async ()=>{
+    const res = await axios.get(URI);
+    setEstados(res.data);
+    console.log("Estos son los estados: " + res.data);
+  };
+
   return (
     <>
       <select className="form-select">
-        <option>1</option>
-        <option>0</option>
+        {estado.map((estado)=>(
+          <option key={estado.id}>{estado.name}</option>
+        ))}
       </select>
     </>
   );

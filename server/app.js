@@ -3,7 +3,7 @@ import cors from 'cors';
 import db from './database/db.js';
 import taskRouter from './routes/TaskRouter.js';
 import tecnicoRouter from './routes/TecnicoRouter.js';
-
+import estadoRouter from './routes/EstadoRouter.js';
 
 const app = express()
 
@@ -11,6 +11,7 @@ app.use(cors())
 app.use(express.json())
 app.use('/tasks' , taskRouter) 
 app.use('/tecnicos' , tecnicoRouter)
+app.use('/estados' , estadoRouter)
 
 
 try {

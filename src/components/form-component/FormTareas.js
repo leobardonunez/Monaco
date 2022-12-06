@@ -1,8 +1,8 @@
 import React from "react";
 import axios from "axios";
 import { useState } from "react";
-import SelectEstados from "../select-component/SelectEstados";
 import SelectTecnicos from "../select-component/SelectTecnicos";
+import { useParams } from "react-router-dom";
 
 const URI = "http://localhost:4000/tasks/";
 
@@ -10,16 +10,36 @@ const FormTareas = (props) => {
   const [nombre, setName] = useState("");
   const [description, setDescription] = useState("");
   const [asigned_to, setAsignedTo] = useState("");  
-
+  const id = useParams();
+   
   //Agregar una tarea
-  const store = async (e) => {
+   const store = async (e) => {
     e.preventDefault();
     await axios.post(URI, {
       name: nombre,
       description: description,
       asigned_to: asigned_to     
-    });    
-  }  
+    });       
+  }
+  
+  //Actualizar una tarea
+  const update = async (e) =>{
+    e.preventDefault()
+    await axios.put(URI+id , {
+      nombre: nombre,
+      description: description,
+      asigned_to: asigned_to
+    })
+  }
+
+  //Traer los datos del registro en form
+  const getTaskById = async ()=>{
+    const res = await axios.get(URI+id)
+    setName(res.data.name)
+    setDescription(res.data.description)
+    setAsignedTo(res.data.asigned_to)
+  }
+  
 
   return (
     <>

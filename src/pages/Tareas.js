@@ -5,12 +5,13 @@ import { useState, useEffect } from "react";
 //Components
 import Modal from "../components/Modal";
 import Table from "../components/table-component/Table";
-import OptionsTable from "../components/table-component/OptionsTable";
 
 const URI = "http://localhost:4000/tasks/";
 
-const Tareas = () => {
-  const [task, setTask] = useState([]);
+const Tareas = (props) => {
+  const [task, setTask] = useState([]); 
+  const {getTaskById}  = this.props;
+
   useEffect(() => {
     getTasks();
   }, []);
@@ -20,7 +21,7 @@ const Tareas = () => {
     const res = await axios.get(URI);
     setTask(res.data);
     console.log("Estas son las tareas: " + res.data);
-  };
+  }; 
 
   //Eliminar una tarea
   const deleteTask = async (id) => {
@@ -90,7 +91,12 @@ const Tareas = () => {
                   </td>
                   <td>
                     <div className="col-2 d-grid gap-2 d-md-flex justify-content-start">
-                      <button type="button" className="btn btn-primary">
+                      <button type="button" 
+                      className="btn btn-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModal"
+                      onClick={getTaskById}
+                      >
                         <i className="bi bi-pencil"></i>
                       </button>
                       <button

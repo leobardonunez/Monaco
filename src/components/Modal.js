@@ -2,26 +2,11 @@ import React from "react";
 import axios from "axios";
 import { useState } from "react";
 import FormTareas from "./form-component/FormTareas";
+import { useParams } from "react-router-dom";
 
 const URI = "http://localhost:4000/tasks/";
 
 const Modal = (props) => {
-  const [nombre, setName] = useState("");
-  const [description, setDescription] = useState("");
-  const [asigned_to, setAsignedTo] = useState(0);
-  const [estado, setEstado] = useState(0);
-
-  //Agregar una tarea
-  const store = async (e) => {
-    e.preventDefault();
-    await axios.post(URI, {
-      name: nombre,
-      description: description,
-      asigned_to: asigned_to,
-      estado: estado,
-    });
-  };
-
   return (
     <>
       <div
