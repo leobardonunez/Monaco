@@ -1,5 +1,5 @@
 import express from 'express';
-import { getAll } from '../controllers/EstadoController';
+import { getAll } from '../controllers/EstadoController.js';
 
 
 
