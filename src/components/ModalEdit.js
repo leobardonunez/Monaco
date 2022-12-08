@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 import FormTareas from "./tareas-components/FormTareas";
 import { useParams } from "react-router-dom";
+import EditTareas from "./tareas-components/EditTareas";
 
 const URI = "http://localhost:4000/tasks/";
 
@@ -11,13 +12,13 @@ const Modal = (props) => {
     <>
       <div
         className="modal fade"
-        id="exampleModal"
+        id="exampleModalEdit"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
         <div className="modal-dialog">
           <div className="modal-content">
-            <FormTareas />
+            <EditTareas />
           </div>
         </div>
       </div>

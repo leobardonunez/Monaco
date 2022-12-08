@@ -1,16 +1,23 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+
 
 //Components
 import Modal from "../components/Modal";
+import ModalEdit from "../components/ModalEdit";
 import Table from "../components/table-component/Table";
 
 const URI = "http://localhost:4000/tasks/";
 
 const Tareas = (props) => {
   const [task, setTask] = useState([]); 
-  const {getTaskById}  = this.props;
+  
+  //Pruebas
+  const {getTaskById} = props; 
+  const id = useParams;
+
 
   useEffect(() => {
     getTasks();
@@ -44,6 +51,7 @@ const Tareas = (props) => {
               Nueva tarea
             </button>
             <Modal />
+            <ModalEdit/>
           </div>
         </div>
 
@@ -94,8 +102,8 @@ const Tareas = (props) => {
                       <button type="button" 
                       className="btn btn-primary"
                       data-bs-toggle="modal"
-                      data-bs-target="#exampleModal"
-                      onClick={getTaskById}
+                      data-bs-target="#exampleModalEdit"
+                      onClick={getTaskById}                      
                       >
                         <i className="bi bi-pencil"></i>
                       </button>

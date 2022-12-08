@@ -22,24 +22,6 @@ const FormTareas = (props) => {
     });       
   }
   
-  //Actualizar una tarea
-  const update = async (e) =>{
-    e.preventDefault()
-    await axios.put(URI+id , {
-      nombre: nombre,
-      description: description,
-      asigned_to: asigned_to
-    })
-  }
-
-  //Traer los datos del registro en form
-  const getTaskById = async ()=>{
-    const res = await axios.get(URI+id)
-    setName(res.data.name)
-    setDescription(res.data.description)
-    setAsignedTo(res.data.asigned_to)
-  }
-  
 
   return (
     <>
